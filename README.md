@@ -29,12 +29,12 @@
    
    For download image:
    ```
-   $ curl -i "http://localhost:8000/load?url=https://cdn.stocksnap.io/img-thumbs/960w/6VOP7FYDYI.jpg"
+   $ curl -i "http://localhost:8000/load?url=http://example.com/image1.png"
    ```
 
    For download more than one image use ";" separator in query:
    ```
-   $ curl -i "http://localhost:8000/load?url=https://cdn.stocksnap.io/img-thumbs/960w/6VOP7FYDYI.jpg;https://cdn.stocksnap.io/img-thumbs/960w/VCJK4NBK4W.jpg"
+   $ curl -i "http://localhost:8000/load?url=http://example.com/image1.png;http://example.com/image2.png"
    ```
 
    ## Versions
