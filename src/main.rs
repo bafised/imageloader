@@ -25,10 +25,7 @@ fn load(url: String) -> Result<Response<'static>, Status> {
 
     for link in links {
         match reqwest::get(link) {
-            Err(e) => {
-
-            }
-
+            Err(_e) => {}
             Ok(mut resp) => {
                 let filename = link.rsplit('/').next().unwrap();
                 let path = &format!("/{}", filename);
