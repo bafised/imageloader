@@ -1,4 +1,5 @@
 #![feature(proc_macro_hygiene, decl_macro)]
+#[cfg(test)] mod tests;
 
 #[macro_use] extern crate rocket;
 extern crate reqwest;
@@ -38,7 +39,7 @@ fn load(url: String) -> Result<Response<'static>, Status> {
         match reqwest::get(link) {
             Err(_e) => {}
             Ok(mut resp) => {
-                let filename = link.rsplit('/').next().unwrap();
+                let filename = &format!("filtered_{}", link.rsplit('/').next().unwrap());
                 let path = &format!("/{}", filename);
                 let localpath = &format!("static/images/{}", filename);
                 let mut file = File::create(localpath).expect("Failed to create file");
@@ -58,8 +59,10 @@ fn load(url: String) -> Result<Response<'static>, Status> {
     Ok(response)
 }
 
+fn rocket() -> rocket::Rocket {
+    rocket::ignite().mount("/", routes![load, files])
+}
+
 fn main() {
-    rocket::ignite()
-        .mount("/", routes![load, files])
-        .launch();
+    rocket().launch();
 }

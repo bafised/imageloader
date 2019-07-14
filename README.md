@@ -4,7 +4,7 @@
    ## Dependencies
    * Rust 1.36
    * Rocket 0.4.2
-   * Docker 18.09.3W
+   * Docker 18.09.3
 
    ## Installation and Run
    Copy project:
@@ -20,8 +20,8 @@
 
    Or use Cargo:
    ```
-   $ cargo run --release
-   $ cargo test --release
+   $ cargo run
+   $ cargo test
    ```
 
    ## Usage
