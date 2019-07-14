@@ -1,10 +1,10 @@
    # Image Loader REST API
-   Image loader allows can get your images from the URL and create a square preview of 100px to 100px. You can also load more than one image in one request using the separator for URL.
+   Image loader allows can get your images from the URL and apply a simple edge detection filter. You can also load more than one image in one request using the separator for URL. For each image, a square preview of 100px by 100px is created.
    
    ## Dependencies
    * Rust 1.36
    * Rocket 0.4.2
-   * Docker 18.09.3
+   * Docker 18.09.3W
 
    ## Installation and Run
    Copy project:
@@ -20,8 +20,8 @@
 
    Or use Cargo:
    ```
-   $ cargo run
-   $ cargo test
+   $ cargo run --release
+   $ cargo test --release
    ```
 
    ## Usage

@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 rocket = "0.4.2"
 reqwest = "0.9.18"
+image = "0.21.2"

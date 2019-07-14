@@ -4,8 +4,8 @@ WORKDIR /imageloader
 
 COPY . /imageloader
 
-RUN cargo build
+RUN cargo build --release
 
 EXPOSE 8000
 
-CMD ["cargo", "run"]
+CMD ["cargo", "run --release"]
